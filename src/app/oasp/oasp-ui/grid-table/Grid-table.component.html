@@ -1,0 +1,18 @@
+<table class="table table-striped" style="cursor:pointer">
+      <thead>
+          <th *ngFor="let attribute of attributeNames; let i = index"
+              (click)="sortColumn(i, attribute)">
+              {{headers[i]}}
+              <a [class]="sortIconStyle[i]" aria-hidden="true"></a>
+          </th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let obj of dataInput"
+          (click)=clickedRow(obj)>
+              <td *ngFor= "let attribute of attributeNames"
+                  [class.selected]="selection === obj">
+                  {{ obj[attribute] }}
+              </td>
+          </tr>
+      </tbody>
+  </table>
