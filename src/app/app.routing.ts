@@ -3,9 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 const appRoutes: Routes = [
   {
-    path: '',
-    redirectTo: '/Login',
-    pathMatch: 'full'
+    // path: '',
+    // redirectTo: '/Login',
+    // pathMatch: 'full'
   }
 
 ];

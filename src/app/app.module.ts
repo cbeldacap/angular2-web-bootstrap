@@ -5,21 +5,21 @@ import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
 import { OaspModule } from './oasp/oasp.module';
 
-import { Oasp4jsSampleAppComponent } from './main/components/main/oasp4js-sample.component';
+import { AppComponent } from './main/components/main/app.component';
 
 @NgModule({
   declarations: [
-    Oasp4jsSampleAppComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     OaspModule,
     FormsModule,
     HttpModule,
-    routing
+    // routing
   ],
   providers: [
   ],
-  bootstrap: [Oasp4jsSampleAppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
