@@ -1,42 +1,24 @@
-<header></header>
+<div>
+  <header></header>
 
-<div class="card" style="width:80%; margin-right:10% 10% auto 10%;">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <br>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <br>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-      <br>
-    </tbody>
-  </table>
-  <div style="width:20%; margin:0 40% 0 40%;" class="btn-group" role="group" aria-label="Options">
-    <button class="btn btn-primary" (click)="runAlert(1)">Option1</button>
-    <button class="btn btn-primary" (click)="runAlert(2)">Option2</button>
-    <button class="btn btn-primary" (click)="runAlert(3)">Option3</button>
+  <div style="width:70%; margin: auto 15% auto 15%">
+    <entity
+      *ngFor="let char of data"
+      [entity]=char
+      (click)="selectChar(char)">
+    </entity>
   </div>
 </div>
+
+<app-modal-dialog
+  *ngIf="selected"
+  [title]="'Character Details'"
+  class="modaldialog">
+    <div class="card card-container">
+      <p>{{currentChar.name}}</p>
+      <p>{{currentChar.surname}}</p>
+      <p>{{currentChar.email}}</p>
+    </div>
+    <button class="btn btn-primary" style="width:20%; margin:auto 40% auto 40%;" (click)="closeDetails()">OK!</button>
+    <!-- <details [entity]=currentChar></details> -->
+</app-modal-dialog>
